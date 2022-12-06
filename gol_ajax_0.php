@@ -543,7 +543,7 @@ function rip($id){
 function monTurn(){
 	global $arMonTypes;
 	global $arObj;
-	
+	global $message;
 	$arMon = searchForPropArr('type', 'mon', $arObj);
 	foreach($arMon as $k => $v){
 		if($arObj[$v]['status'] != 'de'){
