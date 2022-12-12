@@ -736,7 +736,10 @@ foreach($web as $k => $v){
 		echo '<span class="unit"';
 		
 		foreach($arAttr as $attr){
-			if(isset($arObj[$objWeb[$k][$k2]][$attr])){
+			if(array_key_exists($k, $objWeb) &&
+			   array_key_exists($k2, $objWeb[$k]) &&
+			   array_key_exists($objWeb[$k][$k2], $arObj) &&
+			   array_key_exists($attr, $arObj[$objWeb[$k][$k2]])){
 				echo ' '.$attr.'="'.$arObj[$objWeb[$k][$k2]][$attr].'"';
 			}
 		}
